@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techpreneur 1.0 | College Fest 2025</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS for scroll animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    :root {
+      --primary-purple: #3B0F8C;
+      --primary-pink: #FF1FB8;
+      --primary-yellow: #FFD028;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Ensure sections aren't hidden behind fixed navbar */
+    section[id] {
+      scroll-margin-top: 80px;
+    }
+
+    /* Wave Background at the Bottom */
+    .wave-bg {
+      background: linear-gradient(45deg, var(--primary-yellow) 0%, var(--primary-pink) 100%);
+      clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0% 100%);
+      height: 300px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Button Styling: Default white background with purple text & border.
+       On hover, background turns yellow with purple text. */
+    .btn-primary {
+      background-color: white;
+      color: var(--primary-purple);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: 2px solid var(--primary-purple);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-yellow);
+      color: var(--primary-purple);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(59, 15, 140, 0.2);
+    }
+
+    /* Card Styling (used for Key Information cards) */
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* About Us Card Styling (Purple Background, White Text) */
+    .about-card {
+      background: var(--primary-purple);
+      border-radius: 30px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Circular Images for Faculty/Organizers with Caption */
+    .circle-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .circle-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--primary-purple);
+      transition: transform 0.3s ease;
+    }
+    .circle-img:hover {
+      transform: scale(1.05);
+    }
+    .caption {
+      margin-top: 0.5rem;
+      background: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 0.875rem;
+      color: #333;
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Navigation (Fixed Header with Hamburger Menu) -->
+  <header class="fixed top-0 left-0 w-full bg-[var(--primary-purple)] shadow z-10">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <!-- Logo Image -->
+      <div>
+        <img src="IMG_3250-removebg-preview.png" alt="Logo" class="h-10" />
+      </div>
+      <!-- Hamburger Menu Button -->
+      <button id="hamburger" class="text-3xl text-white focus:outline-none">
+        &#9776;
+      </button>
+    </div>
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="hidden bg-[var(--primary-purple)] shadow-md">
+      <ul class="flex flex-col p-4 space-y-2">
+        <li><a href="#about" class="text-white hover:text-[var(--primary-pink)]">About</a></li>
+        <li><a href="#key-info" class="text-white hover:text-[var(--primary-pink)]">Key Information</a></li>
+        <li><a href="#registration" class="text-white hover:text-[var(--primary-pink)]">Registration</a></li>
+        <li><a href="#contact" class="text-white hover:text-[var(--primary-pink)]">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Spacer for Fixed Header -->
+  <div class="h-16"></div>
+
+  <!-- Event Name Section -->
+  <section class="text-center py-12" data-aos="fade-up">
+    <h1 class="text-5xl font-bold text-[var(--primary-purple)]">TECHPRENEUR 1.0</h1>
+    <p class="mt-4 text-lg text-gray-600">
+      An event of innovation, creativity, and collaboration
+    </p>
+  </section>
+
+  <!-- About Us Section (Styled as a Card) -->
+  <section id="about" class="py-12 bg-[var(--primary-purple)] text-white text-center rounded-3xl mx-4" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto about-card">
+      <h2 class="text-3xl font-bold mb-4">About Us</h2>
+      <p class="mb-6">
+        Techpreneur 1.0 is a dynamic startup and innovation event designed to bring together aspiring entrepreneurs, tech enthusiasts, and industry experts under one roof. Whether you’re a student with a groundbreaking idea, a startup looking for exposure, or an investor seeking the next big innovation, Techpreneur 1.0 is the place to be! Join us for a day filled with engaging talks, insightful workshops, and invaluable networking opportunities that empower the next generation of innovators.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Information Section -->
+  <section id="key-info" class="py-12" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[var(--primary-purple)] mb-8">Key Information</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="card">
+          <h3 class="text-xl font-semibold text-[var(--primary-purple)]">Registration Fee</h3>
+          <p class="text-gray-600">₹100 per participant</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold text-[var(--primary-purple)]">Duration</h3>
+          <p class="text-gray-600">9AM - 7PM (28th February 2025)</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold text-[var(--primary-purple)]">Team Size</h3>
+          <p class="text-gray-600">2-5 members</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold text-[var(--primary-purple)]">Eligibility</h3>
+          <p class="text-gray-600">Open to all college students</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold text-[var(--primary-purple)]">Date</h3>
+          <p class="text-gray-600">February 28, 2025</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold text-[var(--primary-purple)]">Location</h3>
+          <p class="text-gray-600">Amity University, Noida</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+  <section id="registration" class="py-12 bg-[var(--primary-purple)] text-white text-center rounded-3xl mx-4" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Register Now</h2>
+      <p class="mb-6">Don't miss your chance to join the most exciting event of the year.</p>
+      <button><a href="https://form.jotform.com/250390792950058" class="btn-primary">Register Here</a>
+      </button>
+    </div>
+  </section>
+
+  <!-- Faculty Mentors Section -->
+  <section id="faculty" class="py-12" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-[var(--primary-purple)] mb-8">Faculty Coordinator</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="circle-container">
+          <img src="IMG_202502081413290.JPG" alt="Faculty Mentor 1" class="circle-img" />
+          <div class="caption">Prof.(Dr.)Sonu Mittal</div>
+        </div>
+        <div class="circle-container">
+          <img src="faculty2.jpg" alt="Faculty Mentor 2" class="circle-img" />
+          <div class="caption">Prof.(Dr.)Sarvesh Tanwar</div>
+        </div>
+        <div class="circle-container">
+          <img src="3648_Dr.Nidhi.jpg" alt="Faculty Mentor 3" class="circle-img" />
+          <div class="caption">Dr. Nidhi Sindhwani</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organizing Heads Section (Transparent Background) -->
+  <section id="organizers" class="py-12" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-[var(--primary-purple)] mb-8">Organizing Heads</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="circle-container">
+          <img src="IMG_3288.JPG" alt="Organizing Head 1" class="circle-img" />
+          <div class="caption">Yash Raj</div>
+        </div>
+        <div class="circle-container">
+          <img src="IMG_202502081436280.JPG" alt="Organizing Head 2" class="circle-img" />
+          <div class="caption">Aparna Dwivedi</div>
+        </div>
+        <div class="circle-container">
+          <img src="IMG_202502081413291.JPG" alt="Organizing Head 3" class="circle-img" />
+          <div class="caption">Soha Khan</div>
+        </div>
+        <div class="circle-container">
+          <img src="IMG_202502081509100.JPG" alt="Organizing Head 4" class="circle-img" />
+          <div class="caption">Aditya Maurya</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Beautifully Styled) -->
+  <section id="contact" class="py-12" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-[var(--primary-purple)] mb-6">Contact Us</h2>
+      <div class="flex flex-col items-center space-y-4">
+        <!-- Phone 1 -->
+        <div class="flex items-center text-gray-600">
+          <!-- Phone Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a2 2 0 011.82 1.22l1.38 3.46a2 2 0 01-.45 2.11l-1.3 1.3a11.36 11.36 0 005.24 5.24l1.3-1.3a2 2 0 012.11-.45l3.46 1.38A2 2 0 0121 15.72V19a2 2 0 01-2 2h-1C8.82 21 3 15.18 3 8V7a2 2 0 012-2z" />
+          </svg>
+          <span>+91 7739864931</span>
+        </div>
+        <!-- Phone 2 -->
+        <div class="flex items-center text-gray-600">
+          <!-- Phone Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a2 2 0 011.82 1.22l1.38 3.46a2 2 0 01-.45 2.11l-1.3 1.3a11.36 11.36 0 005.24 5.24l1.3-1.3a2 2 0 012.11-.45l3.46 1.38A2 2 0 0121 15.72V19a2 2 0 01-2 2h-1C8.82 21 3 15.18 3 8V7a2 2 0 012-2z" />
+          </svg>
+          <span>+91 9582392179</span>
+        </div>
+        <!-- Email -->
+        <div class="flex items-center text-gray-600">
+          <!-- Email Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4" />
+          </svg>
+          <span>techprenuer1.0@gmail.com</span>
+        </div>
+        <!-- Instagram -->
+        <div class="flex items-center text-gray-600">
+          <!-- Instagram Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
+          </svg>
+          <span>@techpreneur_1.0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Transparent) -->
+  <footer class="py-6 bg-transparent text-center">
+    <p class="text-gray-600">&copy; 2025 Techpreneur 1.0. All rights reserved.</p>
+  </footer>
+  
+  <!-- Wave Background -->
+  <div class="wave-bg"></div>
+
+  <!-- AOS JS for Animations & Hamburger Menu Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    // Randomly assign AOS animations to each section for a "crazy pop" effect
+    const animations = ["fade-up", "flip-up", "zoom-in", "fade-left", "fade-right", "flip-down", "zoom-in-up"];
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => {
+      let randomAnim = animations[Math.floor(Math.random() * animations.length)];
+      section.setAttribute("data-aos", randomAnim);
+    });
+    AOS.refreshHard();
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
